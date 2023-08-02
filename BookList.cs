@@ -25,15 +25,6 @@ namespace ConsoleApp_HommeWork5
         {
             return books.Contains(book);
         }
-        public override string ToString()
-        {
-            string result = "";
-            foreach (var item in books)
-            {
-                result += item.ToString() + "\n";
-            }
-            return result;
-        }
         public int Count => books.Count;
         public Books this[int index]
         {
@@ -44,6 +35,14 @@ namespace ConsoleApp_HommeWork5
                 throw new IndexOutOfRangeException("Invalid index.");
             }
         }
-
+        public void Print()
+        {
+            foreach (Books book in books)
+            {
+                Console.WriteLine("<----------------------------->");
+                Console.WriteLine(book);
+            }
+            Console.WriteLine("<----------------------------->");
+        }
     }
 }
